@@ -6,8 +6,7 @@ from mysql.connector import errorcode
 
 #Set up server connection
 try:
-  cnn = mysql.connector.connect(user='james', password = 'zibiaoking', host = '104.236.182.109',
-                                database='DBBook')
+  cnn = mysql.connector.connect(user='', password = '', host = '',database='')
 except mysql.connector.Error as err:
   if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
     print("Something is wrong with your user name or password")
@@ -21,7 +20,6 @@ allBooks = []
 def main():
 	#list of books to be searched
 	#print menu
-	hi = Book(1231231231231)
 	option = print_menu()
 	#while user does not choose exit
 	while(option != 0):
@@ -42,7 +40,7 @@ def opt11():
 				allBooks.append(Book(line))
 				HM[line] = 1
 				print 'Added %d' % line
-		print "length of allBooks is %d" %len(allBooks)
+		print "Total number of books: %d" %len(allBooks)
 	return
 #Update information into database
 def opt22():
