@@ -24,6 +24,6 @@ Create table Book_Detail(
     date_price datetime,
     primary key(detail_id)
     );
-    
+
 #Install mysql-connector-python before using python to interact
 #with the database
