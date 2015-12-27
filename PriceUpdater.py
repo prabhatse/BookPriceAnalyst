@@ -46,14 +46,13 @@ def opt11():
 def opt22():
 	global allBooks
 	global cnn
-
+	cursor = cnn.cursor()
 	for b in allBooks:
 		if b.store and not b.inDB:
 			store = str(b.store[0])
 			price = str(b.price[0])
 			isbn = str(b.isbn)
 			title = str(b.title)
-			cursor = cnn.cursor()
 			#Check if book is already in DB
 			query = ("SELECT book_id from Book WHERE book_isbn = %s")
 			cursor.execute(query, (isbn,))
